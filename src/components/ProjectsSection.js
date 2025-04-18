@@ -37,7 +37,8 @@ const projects = [
     title: "Xakilo - Application moderne de gestion d'inventaire",
     description: "Application en cours de conception (finalisation prévue en juillet), dédiée à la gestion de stock. Stack utilisée : React, Django, Framer Motion, Material UI, et SweetAlert pour les interactions utilisateur.",
     image: "/images/xakilo.JPG",
-    details: "En cours"
+    link: "https://docs.google.com/presentation/d/1Ul3GcMM8-QNoQAiGx2gS1L113XyxHCWL0wap8tYqdf4/edit?usp=sharing",
+    details: "Présentation"
   },
 ];
 

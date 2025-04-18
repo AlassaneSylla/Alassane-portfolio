@@ -4,7 +4,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { Box, HStack, Link } from "@chakra-ui/react";
 
-const socials = [
+export const socials = [
   {
     icon: faEnvelope,
     url: "mailto: p.alassane.sylla@gmail.com",
@@ -64,74 +64,52 @@ const Header = () => {
       right={0}
       zIndex="sticky"
       translateY={0}
-      transitionProperty="transform"
-      transitionDuration=".3s"
-      transitionTimingFunction="ease-in-out"
+      transition="transform .3s ease-in-out"
       bg="gray.900"
       transform={isVisible ? "translateY(0)" : "translateY(-200px)"}
     >
       <Box
         color="white"
-        maxWidth={{ base: "100%", md: "1280px" }} px={{ base: 2, md: 16 }}
+        maxW="1280px"
+        mx="auto"
+        px={{ base: 4, md: 8 }}
+        py={3}
       >
         <HStack
-          px={{base: 4, md: 16}}
-          py={4}
+          flexDirection={{ base: "column", md: "row" }}
           justifyContent="space-between"
           alignItems="center"
+          spacing={{ base: 3, md: 8 }}
+          w="100%"
           textAlign="center"
-          flexDirection={{base: 'column', md: 'row'}}
-          spacing={{base: 2, md: 4}}
+          px={{base: 4, md: 16}}
+          py={3}
         >
-          <nav>
-            <HStack as="ul" spacing={5} style={{listStyle:"none"}}>
+          <Box>
+            <HStack as="ul" spacing={4} listStyleType="none">
               {socials.map((link) => (
                 <li key={link.url}>
                   <Link href={link.url} target="_blank">
-                    <FontAwesomeIcon icon={link.icon} fontSize={{ base: "0.8rem", md: "1.2rem" }} />
+                    <FontAwesomeIcon icon={link.icon} fontSize="1.2rem" />
                   </Link>
                 </li>
               ))}
             </HStack>
-          </nav>
-          <nav>
+          </Box>
+
+          <Box>
             <HStack
-              spacing={{ base: 4, md: 8 }}
+              spacing={{ base: 3, md: 6 }}
               fontWeight="bold"
               fontSize={{ base: "sm", md: "md" }}
             >
-              <Link
-                href="/#about-me-section"
-                onClick={() => handleClick('about-me-section')}
-              >
-                À propos
-              </Link>
-              <Link
-                href="/#projects-section"
-                onClick={() => handleClick('projects-section')}
-              >
-                Projects
-              </Link>
-              <Link
-                href="/#skills-section"
-                onClick={() => handleClick('skills-section')}
-              >
-                Skills
-              </Link>
-              <Link
-                href="/#stadies-section"
-                onClick={() => handleClick('stadies-section')}
-              >
-                Études
-              </Link>
-              <Link
-                href="/#contactme-section"
-                onClick={() => handleClick('contactme-section')}
-              >
-                Contact
-              </Link>
+              <Link onClick={handleClick("about-me")}>À propos</Link>
+              <Link onClick={handleClick("projects")}>Projets</Link>
+              <Link onClick={handleClick("skills")}>Skills</Link>
+              <Link onClick={handleClick("stadies")}>Études</Link>
+              <Link onClick={handleClick("contactme")}>Contact</Link>
             </HStack>
-          </nav>
+          </Box>
         </HStack>
       </Box>
     </Box>
