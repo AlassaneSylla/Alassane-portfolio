@@ -1,4 +1,4 @@
-name: Deploy to Firebase Hosting
+name: Firebase Deploy
 
 on:
   push:
@@ -6,20 +6,21 @@ on:
       - main
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Clone the repository
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Installe Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
-      - name: Installe dependancieces
+      - name: Install dependencies
         run: npm install
 
-      - name: Deploy Firebase Hosting
-        run: npm run build && npx firebase deploy --only hosting --token "${{ secrets.FIREBASE_ALASSANE_PORTFOLIO_TOKEN }}"
+      - name: Build project
+        run: npm run build
+
+      - name: Install Firebase CLI
+        run: npm install -g firebase-tools
+
+      - name: Deploy to Firebase
+        run: firebase deploy --only hosting --token ${{ secrets.FIREBASE_ALASSANE_PORTFOLIO_TOKEN }}
