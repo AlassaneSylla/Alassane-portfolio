@@ -177,7 +177,7 @@ const LandingSection = () => {
                 >
                   <option value="hireMe">Proposition de projet freelance</option>
                   <option value="openSource">Conception de site web</option>
-                  <option value="colab">Vollabaration</option>
+                  <option value="colab">Collabaration</option>
                   <option value="other">Autres</option>
                 </Select>
                 <FormErrorMessage>{formik.errors.type}</FormErrorMessage>
