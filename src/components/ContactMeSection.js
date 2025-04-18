@@ -55,7 +55,7 @@ const LandingSection = () => {
         });
 
         console.log("Message enregistré !");
-        
+
         Swal.fire({
           title: 'Message envoyé !',
           text: `Merci ${values.firstName}, je vous répondrai dans les plus brefs délais.`,
@@ -176,7 +176,8 @@ const LandingSection = () => {
                   onBlur={formik.handleBlur}
                 >
                   <option value="hireMe">Proposition de projet freelance</option>
-                  <option value="openSource">Session de conseil sur les logiciels libres</option>
+                  <option value="openSource">Conception de site web</option>
+                  <option value="colab">Vollabaration</option>
                   <option value="other">Autres</option>
                 </Select>
                 <FormErrorMessage>{formik.errors.type}</FormErrorMessage>
