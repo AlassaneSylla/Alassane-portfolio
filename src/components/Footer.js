@@ -8,15 +8,13 @@ const Footer = () => {
     <Box backgroundColor="#18181b">
       <footer>
         <Flex
-          direction="column"
-          margin="0 auto"
-          px={{base: 4, md: 12}}
-          py={3}
-          color="white"
-          justifyContent="center"
+          flexDirection={{ base: "column", md: "row" }}
+          justifyContent="space-between"
           alignItems="center"
-          maxWidth="1024px"
-          height={16}
+          color="white"
+          w="100%"
+          px={{base: 4, md: 16}}
+          py={3}
         >
           <Text
             fontSize={{ base: "sm", md: "md" }}
@@ -32,7 +30,7 @@ const Footer = () => {
             <HStack as="ul" spacing={5} style={{listStyle:"none"}}>
               {socials.map((link) => (
                 <li key={link.url}>
-                  <Link href={link.url} target="_blank">
+                  <Link href={link.url} target="_blank" _hover={{ color: "teal.300" }}>
                     <FontAwesomeIcon icon={link.icon} fontSize={{ base: "0.8rem", md: "1.2rem" }} />
                   </Link>
                 </li>

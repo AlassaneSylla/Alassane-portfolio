@@ -141,6 +141,7 @@ const LandingSection = () => {
                   value={formik.values.firstName}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
+                  transition="color 0.2s ease-in-out"
                 />
                 <FormErrorMessage>{formik.errors.firstName}</FormErrorMessage>
               </FormControl>
@@ -156,6 +157,7 @@ const LandingSection = () => {
                   color="teal.800"
                   borderColor="gray.300"
                   focusBorderColor="teal.500"
+                  transition="color 0.2s ease-in-out"
                   value={formik.values.email}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
@@ -171,6 +173,7 @@ const LandingSection = () => {
                   color="teal.800"
                   borderColor="gray.300"
                   focusBorderColor="teal.500"
+                  transition="color 0.2s ease-in-out"
                   value={formik.values.type}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
@@ -191,6 +194,7 @@ const LandingSection = () => {
                   color="teal.800"
                   borderColor="gray.300"
                   focusBorderColor="teal.600"
+                  transition="color 0.2s ease-in-out"
                   minH={120}
                   value={formik.values.comment}
                   onChange={formik.handleChange}

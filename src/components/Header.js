@@ -89,7 +89,7 @@ const Header = () => {
             <HStack as="ul" spacing={4} listStyleType="none">
               {socials.map((link) => (
                 <li key={link.url}>
-                  <Link href={link.url} target="_blank">
+                  <Link href={link.url} target="_blank" _hover={{ color: "teal.300" }}>
                     <FontAwesomeIcon icon={link.icon} fontSize="1.2rem" />
                   </Link>
                 </li>
@@ -100,16 +100,44 @@ const Header = () => {
           <Box>
             <HStack
               spacing={{ base: 3, md: 6 }}
-              fontWeight="bold"
               fontSize={{ base: "sm", md: "md" }}
             >
-              <Link onClick={handleClick("about-me")}>À propos</Link>
-              <Link onClick={handleClick("projects")}>Projets</Link>
-              <Link onClick={handleClick("skills")}>Skills</Link>
-              <Link onClick={handleClick("stadies")}>Études</Link>
-              <Link onClick={handleClick("contactme")}>Contact</Link>
+              {[
+                { label: "À propos", id: "about-me" },
+                { label: "Projets", id: "projects" },
+                { label: "Skills", id: "skills" },
+                { label: "Études", id: "stadies" },
+                { label: "Contact", id: "contactme" },
+              ].map((item) => (
+                <Link
+                  key={item.id}
+                  as="button"
+                  onClick={handleClick(item.id)}
+                  fontWeight="bold"
+                  _hover={{ color: "teal.300" }}
+                  transition="color 0.2s ease-in-out"
+                >
+                  {item.label}
+                </Link>
+              ))}
             </HStack>
           </Box>
+
+
+          {/* <Box>
+            <HStack
+              spacing={{ base: 3, md: 6 }}
+              fontWeight="bold"
+              fontSize={{ base: "sm", md: "md" }}
+              _hover={{ color: "teal.300" }}
+            >
+              <Link onClick={ () => handleClick("about-me")}>À propos</Link>
+              <Link onClick={ () => handleClick("projects")}>Projets</Link>
+              <Link onClick={ () => handleClick("skills")}>Skills</Link>
+              <Link onClick={ () => handleClick("stadies")}>Études</Link>
+              <Link onClick={ () => handleClick("contactme")}>Contact</Link>
+            </HStack>
+          </Box> */}
         </HStack>
       </Box>
     </Box>
