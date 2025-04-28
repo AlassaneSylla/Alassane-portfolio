@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 const greeting = "Hello, moi c'est Alassane 👋";
 const [title1, title2] = ["Développeur Logiciel", "Développeur Full-Stack"];
 const bio2 = "Je conçois des applications web modernes et performantes avec React, Angular, Python et Django. Passionné par les solutions digitales innovantes.";
-const MotionBox = motion(Box);
+const MotionBox = motion.create(Box);
 
 const LandingSection = () => (
   <FullScreenSection

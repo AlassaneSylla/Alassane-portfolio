@@ -122,22 +122,6 @@ const Header = () => {
               ))}
             </HStack>
           </Box>
-
-
-          {/* <Box>
-            <HStack
-              spacing={{ base: 3, md: 6 }}
-              fontWeight="bold"
-              fontSize={{ base: "sm", md: "md" }}
-              _hover={{ color: "teal.300" }}
-            >
-              <Link onClick={ () => handleClick("about-me")}>À propos</Link>
-              <Link onClick={ () => handleClick("projects")}>Projets</Link>
-              <Link onClick={ () => handleClick("skills")}>Skills</Link>
-              <Link onClick={ () => handleClick("stadies")}>Études</Link>
-              <Link onClick={ () => handleClick("contactme")}>Contact</Link>
-            </HStack>
-          </Box> */}
         </HStack>
       </Box>
     </Box>

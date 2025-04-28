@@ -34,7 +34,6 @@ const LandingSection = () => {
           comment: values.comment,
           createdAt: serverTimestamp()
         });
-        
         //send mail with EmailJS
         console.log('Envoi vers EmailJS…');
         emailjs.send(
@@ -74,27 +73,6 @@ const LandingSection = () => {
           confirmButtonColor: '#E53E3E',
         });
       }
-
-      // submit('/alassane-api', values);
-      // if (response?.type === 'success') {
-      //   onOpen('succès', `Merci pour votre soumission ${values.firstName}, nous vous répondrons dans les plus brefs délais !`);
-      //   Swal.fire({
-      //     title: 'Message envoyé !',
-      //     text: `Merci ${values.firstName}, je vous répondrai dans les plus brefs délais.`,
-      //     icon: 'success',
-      //     confirmButtonColor: '#319795',
-      //   });
-      //   resetForm();
-      // }
-      // else if (response?.type === 'erreur') {
-      //   onOpen('erreur', `Un problème s'est produit, veuillez réessayer plus tard !`);
-      //   Swal.fire({
-      //     title: 'Erreur',
-      //     text: `Un problème est survenu, veuillez réessayer plus tard.`,
-      //     icon: 'error',
-      //     confirmButtonColor: '#E53E3E',
-      //   });
-      // }
     },
     validationSchema: Yup.object({
       firstName: Yup.string().required(`le prénom est obligatoire`),
